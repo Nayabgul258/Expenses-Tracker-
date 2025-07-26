@@ -1,4 +1,4 @@
-# 💸 Expense Tracker App (Full Stack)
+#  Expense Tracker App (Full Stack)
 
 A full-stack web application to help remote teams track and review expenses with role-based access, admin insights, and audit logs.
 
@@ -49,7 +49,7 @@ root/
 
 └── server/ Node.js + Express Backend
 
-## 🚀 Local Setup
+##  Local Setup
 
 ### 1 Clone Repo
 ```bash
