@@ -10,8 +10,8 @@ function reloadwebsite (){
     console.log("Website reloded");
   })
   .catch((error) =>{
-    console.log(`Error :${error.message}`);
-  });
+    console.log(`Error :${error.message}`)
+  })
 });
 
 API.interceptors.request.use((config) => {
