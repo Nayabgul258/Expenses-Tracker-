@@ -2,16 +2,6 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: 'https://expenses-tracker-xv2j.onrender.com'
-  const interval = 30000;
-function reloadwebsite (){
-  axiox
-  .get(baseURL)
-  .then((responce) =>{
-    console.log("Website reloded");
-  })
-  .catch((error) =>{
-    console.log(`Error :${error.message}`)
-  })
 });
 
 API.interceptors.request.use((config) => {
