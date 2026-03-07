@@ -16,16 +16,19 @@ const AdminDashboard = () => {
   //   }
   // };
 
-const fetchExpenses = useCallback(async () => {
+  const fetchExpenses = useCallback(async () => {
   try {
     const res = await API.get(
-      `/api/expenses${filter ? `?status=${filter}` : ""}`
+      `/expenses${filter ? `?status=${filter}` : ""}`
     );
     setExpenses(res.data);
   } catch (err) {
     console.error("Error fetching expenses:", err.message);
   }
 }, [filter]);
+
+
+
 
 
 
