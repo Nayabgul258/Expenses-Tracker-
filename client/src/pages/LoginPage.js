@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api/api.js';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -58,6 +59,12 @@ const LoginPage = () => {
             Login
           </button>
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+          <p className="text-center text-sm mt-4">
+  New user?
+  <Link to="/register" className="text-indigo-600 hover:underline ml-1">
+    Register here
+  </Link>
+</p>
         </form>
       </div>
     </div>

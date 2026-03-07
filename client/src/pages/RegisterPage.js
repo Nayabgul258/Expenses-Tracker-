@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import API from '../api/api';
 
 const RegisterPage = () => {
-  const [form, setForm] = useState({ name: '', email: '', password: '', role: 'employee' });
+  const [form, setForm] = useState({ name: '', email: '', password: '', role: ''});
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
