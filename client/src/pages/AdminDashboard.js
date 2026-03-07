@@ -1,20 +1,33 @@
-import react, { useEffect, useState } from "react";
+import  { useEffect, useState,useCallback } from "react";
 import API from "../api/api";
 
 const AdminDashboard = () => {
   const [expenses, setExpenses] = useState([]);
   const [filter, setFilter] = useState("");
 
-  const fetchExpenses = async () => {
-    try {
-      const res = await API.get(
-        `/expenses${filter ? `?status=${filter}` : ""}`
-      );
-      setExpenses(res.data);
-    } catch (err) {
-      console.error("Error fetching expenses:", err.message);
-    }
-  };
+  // const fetchExpenses = async () => {
+  //   try {
+  //     const res = await API.get(
+  //       `/expenses${filter ? `?status=${filter}` : ""}`
+  //     );
+  //     setExpenses(res.data);
+  //   } catch (err) {
+  //     console.error("Error fetching expenses:", err.message);
+  //   }
+  // };
+
+const fetchExpenses = useCallback(async () => {
+  try {
+    const res = await API.get(
+      `/api/expenses${filter ? `?status=${filter}` : ""}`
+    );
+    setExpenses(res.data);
+  } catch (err) {
+    console.error("Error fetching expenses:", err.message);
+  }
+}, [filter]);
+
+
 
   const updateStatus = async (id, status) => {
     try {
@@ -25,9 +38,13 @@ const AdminDashboard = () => {
     }
   };
 
+  // useEffect(() => {
+  //   fetchExpenses();
+  // }, [filter]);
+
   useEffect(() => {
-    fetchExpenses();
-  }, [filter]);
+  fetchExpenses();
+}, [fetchExpenses]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">

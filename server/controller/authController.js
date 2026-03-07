@@ -46,8 +46,11 @@ export const login = async(req , res) => {
         name:user.name,
         role:user.role
     }});
+    console.log("Body:", req.body);
+    console.log("User:", user);
 
    } catch (err) {
+    console.log(err);
     res.status(500).json({message:"Login Failed",error:err.message});
    }
 };
