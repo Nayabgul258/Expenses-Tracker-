@@ -1,5 +1,6 @@
 import  { useEffect, useState,useCallback } from "react";
 import API from "../api/api";
+import Navbar from "../component/Navbar";
 
 const AdminDashboard = () => {
   const [expenses, setExpenses] = useState([]);
@@ -50,6 +51,9 @@ const AdminDashboard = () => {
 }, [fetchExpenses]);
 
   return (
+    <div>
+      <Navbar/>
+   
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">
         Admin Dashboard
@@ -125,6 +129,7 @@ const AdminDashboard = () => {
         </table>
       </div>
     </div>
+     </div>
   );
 };
 
